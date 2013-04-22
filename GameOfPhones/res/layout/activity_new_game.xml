@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    tools:context=".NewGame" >
+
+    <EditText
+        android:id="@+id/lobby_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/GameName"
+        android:layout_marginLeft="26dp"
+        android:layout_toRightOf="@+id/GameName"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextVie"
+        android:layout_centerHorizontal="true" >
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextVie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/map_type"
+        android:layout_alignLeft="@+id/GameName"
+        android:text="Map"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/numberOfPlayers"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView03"
+        android:layout_toRightOf="@+id/TextView03"
+        android:drawSelectorOnTop="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin" />
+
+    <Spinner
+        android:id="@+id/map_type"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/numberOfPlayers"
+        android:layout_below="@+id/lobby_name"
+        android:layout_marginTop="36dp"
+        android:drawSelectorOnTop="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin" />
+
+    <Spinner
+        android:id="@+id/numberOfVictoryPoints"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView03"
+        android:layout_alignLeft="@+id/numberOfPlayers"
+        android:drawSelectorOnTop="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView02"
+        android:layout_below="@+id/TextView02"
+        android:layout_marginTop="54dp"
+        android:text="Number of \nVictory Points"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextVie"
+        android:layout_below="@+id/TextVie"
+        android:layout_marginTop="48dp"
+        android:text="Number of \nPlayers"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/createGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:onClick="create_game"
+        android:text="Create Lobby!" />
+
+    <TextView
+        android:id="@+id/GameName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/createGame"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="96dp"
+        android:text="@string/new_lobby_name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

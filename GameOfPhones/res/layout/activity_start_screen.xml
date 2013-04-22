@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/spacebackground"
+    android:orientation="vertical" >
+    
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="192dp"
+        android:background="@color/transparent"
+        android:src="@drawable/game_of_phones_logo_2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/transparent" >
+
+        <Button
+            android:id="@+id/toMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="79dp"
+            android:background="@drawable/menu_button"
+            android:text="@string/start" />
+    </RelativeLayout>
+
+</LinearLayout>

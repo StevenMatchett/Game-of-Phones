@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/spacebackground"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/players"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_background"
+        android:gravity="center"
+        android:text="Players"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="338dp"
+        android:background="@drawable/background" >
+
+        <ListView
+            android:id="@+id/resource_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/background"
+            android:divider="@color/light_highlight"
+            android:dividerHeight="3dp"
+            android:textAlignment="center" >
+        </ListView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="338dp"
+        android:layout_weight="3"
+        android:background="@color/transparent" >
+
+        <Button
+            android:id="@+id/joinGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/menu_button"
+            android:gravity="center"
+            android:text="JOIN GAME" />
+
+    </RelativeLayout>
+
+</LinearLayout>

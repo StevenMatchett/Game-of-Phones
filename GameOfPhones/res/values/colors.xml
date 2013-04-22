@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_background">#114653</color>
+    <color name="med_background">#1F4D58</color>
+    <color name="light_background">#1B5664</color>
+    <color name="light_highlight">#639EAC</color>
+    <color name="dark_highlight">#4B9AAC</color>
+    <color name="dark_orange">#A26428</color>
+    <color name="med_orange">#CD9156</color>
+    <color name="light_orange">#CDA073</color>
+    <color name="light_brown">#8E5F30</color>
+	<color name="dark_brown">#864F19</color>
+	<color name="transparent">#80000000</color>
+	<color name="white">#FFFFFF</color>
+</resources>
+<!-- http://colorschemedesigner.com/#3n22Po8kkg0tI -->

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="core.gameOfPhones"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="core.gameOfPhones.StartScreen"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.MenuScreen"
+            android:label="@string/title_activity_menu_screen"
+            android:parentActivityName="core.gameOfPhones.StartScreen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gameofphones.StartScreen" />
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.LoginToFoursquare"
+            android:label="@string/title_activity_login_to_foursquare" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.FoursquareOauthWebView"
+            android:label="@string/title_activity_forusquare_oauth_web_veiw" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.FriendsList"
+            android:label="@string/title_activity_friends_list" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.DisplayFriends"
+            android:label="@string/title_activity_display_friends" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.Checkin"
+            android:label="@string/title_activity_checkin" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.VenueList"
+            android:label="@string/title_activity_venue_list" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.ServerList"
+            android:label="@string/title_activity_server_list" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.Lobby"
+            android:label="@string/title_activity_lobby" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.NewGame"
+            android:label="@string/title_activity_new_game" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.CurrentGames"
+            android:label="@string/title_activity_current_games" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.Game_layout"
+            android:label="@string/title_activity_game_layout" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.Game"
+            android:label="@string/title_activity_game" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.Building_View"
+            android:label="@string/title_activity_building__view" >
+        </activity>
+        <activity
+            android:name="core.gameOfPhones.Buildings"
+            android:label="@string/title_activity_buildings" >
+        </activity>
+    </application>
+
+</manifest>
