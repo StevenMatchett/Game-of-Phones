@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/spacebackground"
+
     android:orientation="vertical" >
 
     <TextView
@@ -11,11 +11,30 @@
         android:layout_height="wrap_content"
         android:text="Select a Building type"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/white" />
+        android:textColor="@color/med_orange" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/building_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="142dp"
+        android:layout_height="135dp"
+        android:text="About the building" />
+
+    <TextView
+        android:id="@+id/building_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/upgrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
 </LinearLayout>

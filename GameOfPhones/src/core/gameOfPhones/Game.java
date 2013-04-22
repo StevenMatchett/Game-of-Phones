@@ -20,9 +20,10 @@ import android.widget.TextView;
 public class Game extends Activity {
 	private GameData game;
 	Player current;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game);
 		final ListView listview = (ListView) findViewById(R.id.resource_list);
@@ -30,41 +31,39 @@ public class Game extends Activity {
 		TextView gameTitle = (TextView) findViewById(R.id.GameName);
 		gameTitle.setText(game.getGameName());
 		ArrayList<String> list = new ArrayList<String>();
-		
+
 		list.addAll(getResourceList());
 		final ArrayAdapter adapter = new ArrayAdapter(this,
 				android.R.layout.simple_list_item_1, list);
 		listview.setAdapter(adapter);
-		
-		
-		
-		
-		
+
 		setButtons();
-		
+
 	}
-	public void setButtons(){
-		Button buildings = (Button)findViewById(R.id.See_Buildings);
-	     //setFreeFont(toMenuButton);
+
+	public void setButtons() {
+		Button buildings = (Button) findViewById(R.id.See_Buildings);
+		// setFreeFont(toMenuButton);
 		buildings.setOnClickListener(new OnClickListener() {
-	            public void onClick(View v) {
-	            	GameSingleton.setPlayer(current);
-	            	 Intent intent = new Intent(Game.this, Buildings.class);
-		                startActivity(intent);
+			public void onClick(View v) {
+				GameSingleton.setPlayer(current);
+				Intent intent = new Intent(Game.this, Buildings.class);
+				startActivity(intent);
 
-	            }
-	     });
-		
+			}
+		});
+
 	}
 
-	//buildings
+	// buildings
 	private ArrayList<String> getResourceList() {
 		current = null;
-		for (int i = 0; i< game.getPlayers().size(); i++){
-			if (game.getPlayers().get(i).getPlayer_id().equals(user.TokenSingleton.getUserID())){ 
+		for (int i = 0; i < game.getPlayers().size(); i++) {
+			if (game.getPlayers().get(i).getPlayer_id()
+					.equals(user.TokenSingleton.getUserID())) {
 				current = game.getPlayers().get(i);
 			}
-			
+
 		}
 		return current.getResources();
 	}
