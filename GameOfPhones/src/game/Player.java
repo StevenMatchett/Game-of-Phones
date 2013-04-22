@@ -44,6 +44,10 @@ public class Player {
 		this.produce = produce;
 	}
 
+	public Player(String name) {
+		this.player_name = name;
+	}
+
 	public ArrayList<String> getResources() {
 		ArrayList<String> rValue = new ArrayList<String>();
 		rValue.add("Conquest Points:" + conquest_points);

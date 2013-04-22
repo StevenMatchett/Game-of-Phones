@@ -12,8 +12,8 @@
         android:id="@+id/resource_list"
         android:layout_width="125dp"
         android:layout_height="336dp"
-        android:layout_alignLeft="@+id/seeOtherPlayers"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:background="@color/light_background"
         android:divider="@color/light_highlight"
@@ -21,16 +21,6 @@
         android:textAlignment="inherit" >
 
     </ListView>
-
-    <Button
-        android:id="@+id/seeOtherPlayers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/resource_list"
-        android:layout_alignRight="@+id/GameName"
-        android:layout_marginRight="45dp"
-        android:background="@drawable/menu_button"
-        android:text="Other Players" />
 
     <Button
         android:id="@+id/See_Buildings"
@@ -49,5 +39,13 @@
         android:layout_centerHorizontal="true"
         android:text="GAME NAME"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/players_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/resource_list"
+        android:layout_below="@+id/GameName"
+        android:layout_toLeftOf="@+id/See_Buildings" />
 
 </RelativeLayout>

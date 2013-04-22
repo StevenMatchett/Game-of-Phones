@@ -12,33 +12,96 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 public class Game extends Activity {
 	private GameData game;
-	Player current;
+	Player current = GameSingleton.getPlayer();
+	Spinner playerSpinner;
+	ListView listview;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_game);
-		final ListView listview = (ListView) findViewById(R.id.resource_list);
+		listview = (ListView) findViewById(R.id.resource_list);
 		game = GameSingleton.getGame();
 		TextView gameTitle = (TextView) findViewById(R.id.GameName);
 		gameTitle.setText(game.getGameName());
-		ArrayList<String> list = new ArrayList<String>();
-
-		list.addAll(getResourceList());
-		final ArrayAdapter adapter = new ArrayAdapter(this,
-				android.R.layout.simple_list_item_1, list);
-		listview.setAdapter(adapter);
-
+		setResourceList();
 		setButtons();
 
+	}
+
+	private void setResourceList() {
+		ArrayList<String> list = new ArrayList<String>();
+		
+		list.addAll(getResourceList());
+		ArrayAdapter adapter = new ArrayAdapter(this,
+				android.R.layout.simple_list_item_1, list);
+		listview.setAdapter(adapter);
+		setPlayerSpinner();
+	}
+
+	private void setPlayerSpinner() {
+		ArrayAdapter<Player> playerList = new ArrayAdapter<Player>(this,
+				android.R.layout.simple_spinner_item);
+		playerList
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+		playerList = fillPlayersList(playerList);
+
+		playerSpinner = (Spinner) findViewById(R.id.players_view);
+
+		playerSpinner.setAdapter(playerList);
+
+		playerSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
+				//System.out.println((Player) arg0.getSelectedItem());
+				GameSingleton.setPlayer((Player) arg0.getSelectedItem());
+				current = (Player) arg0.getSelectedItem();
+				ArrayList<String> list = new ArrayList<String>();
+				
+				list.addAll(getResourceList());
+				ArrayAdapter adapter = new ArrayAdapter(Game.this,
+						android.R.layout.simple_list_item_1, list);
+				listview.setAdapter(adapter);
+
+				
+
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				
+			}
+
+		});
+
+	}
+
+	private ArrayAdapter<Player> fillPlayersList(ArrayAdapter<Player> playerList) {
+
+		for (int i = 0; i < game.getPlayers().size(); i++) {
+			if (game.getPlayers().get(i).getPlayer_id()
+					.equals(user.TokenSingleton.getUserID())) {
+				playerList.insert(game.getPlayers().get(i), 0);
+			} else {
+				playerList.add(game.getPlayers().get(i));
+			}
+
+		}
+		return playerList;
 	}
 
 	public void setButtons() {
@@ -55,16 +118,25 @@ public class Game extends Activity {
 
 	}
 
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		GameSingleton.setPlayer(null);
+	}
+
 	// buildings
 	private ArrayList<String> getResourceList() {
-		current = null;
-		for (int i = 0; i < game.getPlayers().size(); i++) {
-			if (game.getPlayers().get(i).getPlayer_id()
-					.equals(user.TokenSingleton.getUserID())) {
-				current = game.getPlayers().get(i);
-			}
+		System.out.println(current);
+		if (current == null) {
+			for (int i = 0; i < game.getPlayers().size(); i++) {
+				if (game.getPlayers().get(i).getPlayer_id()
+						.equals(user.TokenSingleton.getUserID())) {
+					current = game.getPlayers().get(i);
+				}
 
+			}
 		}
+
 		return current.getResources();
 	}
 

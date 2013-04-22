@@ -183,31 +183,6 @@ public class VenueList extends Activity {
 		Log.i(getLocalClassName(), value.toString());
 	}
 
-	private class StableArrayAdapter extends ArrayAdapter<Venue> {
-
-		HashMap<Venue, Integer> mIdMap = new HashMap<Venue, Integer>();
-
-		public StableArrayAdapter(Context context, int textViewResourceId,
-				ArrayList<Venue> list) {
-			super(context, textViewResourceId, list);
-			for (int i = 0; i < list.size(); ++i) {
-				mIdMap.put(list.get(i), i);
-			}
-		}
-
-		@Override
-		public long getItemId(int position) {
-			Venue item = getItem(position);
-			return mIdMap.get(item);
-		}
-
-		@Override
-		public boolean hasStableIds() {
-			return true;
-		}
-
-	}
-
 	private String getGPS() {
 
 		LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);

@@ -20,7 +20,7 @@ public class Communication {
 		Communicate loc = new Communicate();
 		final URL URL = null;
 		loc.execute(URL);
-
+	
 		try {
 			loc.get(10000000, TimeUnit.MILLISECONDS);
 		} catch (Exception e) {

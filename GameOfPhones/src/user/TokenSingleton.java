@@ -1,5 +1,7 @@
 package user;
 
+import game.Player;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -8,7 +10,16 @@ public class TokenSingleton {
 	private static String userID;
 	private static String userName;
 	private static TokenSingleton tokenInstance;
-
+	private static Player loggedinPlayer;
+	
+	public static void setLoggedinPlayer(Player pl){
+		loggedinPlayer = pl;
+	}
+	
+	public static Player getLoggedinPlayer(){
+		return loggedinPlayer;
+	}
+	
 	private TokenSingleton() {
 
 	}

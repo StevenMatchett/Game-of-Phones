@@ -6,6 +6,14 @@
     android:orientation="vertical" >
 
     <TextView
+        android:id="@+id/player_viewing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Viewing..."
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/med_orange" />
+
+    <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +43,6 @@
         android:id="@+id/upgrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Upgrade Building" />
 
 </LinearLayout>

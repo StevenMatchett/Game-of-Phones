@@ -29,7 +29,7 @@ public class Lobby extends Activity {
 		setContentView(R.layout.activity_lobby);
 		game = GameSingleton.getGame();
 
-		TextView playersText = (TextView) findViewById(R.id.players);
+		TextView playersText = (TextView) findViewById(R.id.players_view);
 		playersText.setText("Players (" + game.getPlayers().size() + "/"
 				+ game.getMaxPlayers() + ")");
 

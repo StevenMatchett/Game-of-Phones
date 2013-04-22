@@ -62,6 +62,7 @@ public class ServerList extends Activity {
 
 				final GameData item = (GameData) parent.getItemAtPosition(position);
 				launch(item);
+				finish();
 
 			}
 

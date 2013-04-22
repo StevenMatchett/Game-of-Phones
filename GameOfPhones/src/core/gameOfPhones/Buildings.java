@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import server.Communication;
 import game.GameData;
+import game.Player;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -26,16 +27,26 @@ public class Buildings extends Activity {
 	TextView buildingLevel;
 	int selectedUpgrade;
 	Spinner buildings;
+	Player current;
+	TextView viewingPlayerBuilding;
+	boolean yourBuildings;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_buildings);
+
+		viewingPlayerBuilding = (TextView) findViewById(R.id.player_viewing);
 		upgrade = (Button) findViewById(R.id.upgrade);
 		about = (TextView) findViewById(R.id.about);
 		buildingLevel = (TextView) findViewById(R.id.building_level);
 		reset();
 
+		current = game.GameSingleton.getPlayer();
+		viewingPlayerBuilding.setText("Currenlt Viewing Buildings:"
+				+ current.getPlayerName());
+		yourBuildings = current.getPlayer_id().equals(
+				user.TokenSingleton.getUserID());
 		upgrade.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				// action=update_building&user_id=xxxx&game_id=xxxx&building_id=xxxx
@@ -105,6 +116,7 @@ public class Buildings extends Activity {
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
+
 				if (arg2 == 0) {
 					reset();
 				} else if (arg2 == 1) {
@@ -150,24 +162,23 @@ public class Buildings extends Activity {
 						Toast.LENGTH_LONG).show();
 				return;
 			}
-			
+
 			if (selectedUpgrade == 1) {
-				//selectedUpgrade = 1;
-				drawAgency();
+				// selectedUpgrade = 1;
+				// drawAgency();
 			} else if (selectedUpgrade == 2) {
-				//selectedUpgrade = 2;
-				drawFactory();
+				// selectedUpgrade = 2;
+				// drawFactory();
 			} else if (selectedUpgrade == 3) {
-				//selectedUpgrade = 3;
-				drawLab();
+				// selectedUpgrade = 3;
+				// drawLab();
 			} else if (selectedUpgrade == 4) {
-				//selectedUpgrade = 4;
-				drawStudio();
+				// selectedUpgrade = 4;
+				// drawStudio();
 			} else if (selectedUpgrade == 5) {
-				//selectedUpgrade = 5;
-				drawTemple();
+				// selectedUpgrade = 5;
+				// drawTemple();
 			}
-			
 
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -182,16 +193,19 @@ public class Buildings extends Activity {
 	}
 
 	private void drawTemple() {
-		upgrade.setVisibility(View.VISIBLE);
+		if (yourBuildings)
+			upgrade.setVisibility(View.VISIBLE);
 		about.setVisibility(View.VISIBLE);
 		buildingLevel.setVisibility(View.VISIBLE);
 		about.setText("This is info about what a temple is and what it can do");
 		buildingLevel.setText("Temple Level is "
 				+ game.GameSingleton.getPlayer().getFactory_level());
+
 	}
 
 	private void drawStudio() {
-		upgrade.setVisibility(View.VISIBLE);
+		if (yourBuildings)
+			upgrade.setVisibility(View.VISIBLE);
 		about.setVisibility(View.VISIBLE);
 		buildingLevel.setVisibility(View.VISIBLE);
 		about.setText("This is info about what a Studio is and what it can do");
@@ -200,7 +214,8 @@ public class Buildings extends Activity {
 	}
 
 	private void drawLab() {
-		upgrade.setVisibility(View.VISIBLE);
+		if (yourBuildings)
+			upgrade.setVisibility(View.VISIBLE);
 		about.setVisibility(View.VISIBLE);
 		buildingLevel.setVisibility(View.VISIBLE);
 		about.setText("This is info about what a Lab is and what it can do");
@@ -209,7 +224,8 @@ public class Buildings extends Activity {
 	}
 
 	private void drawFactory() {
-		upgrade.setVisibility(View.VISIBLE);
+		if (yourBuildings)
+			upgrade.setVisibility(View.VISIBLE);
 		about.setVisibility(View.VISIBLE);
 		buildingLevel.setVisibility(View.VISIBLE);
 		about.setText("This is info about what a Factory is and what it can do");
@@ -218,7 +234,8 @@ public class Buildings extends Activity {
 	}
 
 	private void drawAgency() {
-		upgrade.setVisibility(View.VISIBLE);
+		if (yourBuildings)
+			upgrade.setVisibility(View.VISIBLE);
 		about.setVisibility(View.VISIBLE);
 		buildingLevel.setVisibility(View.VISIBLE);
 		about.setText("This is info about what a Agency is and what it can do");
