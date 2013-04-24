@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/spacebackground"
+    android:orientation="vertical" >
+ 
+    <Button
+        android:id="@+id/newGame"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/background"
+        android:text="New Game"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+ 
+    <Button
+        android:id="@+id/current_games"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/background"
+        android:text="Current Games"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+ 
+    <Button
+        android:id="@+id/serverList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/background"
+        android:text="Server List"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+ 
+    <Button
+        android:id="@+id/venues"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/background"
+        android:text="Check In"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+ 
+</LinearLayout>
