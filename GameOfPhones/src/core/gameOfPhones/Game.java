@@ -3,11 +3,20 @@ package core.gameOfPhones;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.json.JSONException;
+
+import server.Communication;
+
+import core.gameOfPhones.VenueList.Venue;
+
 import game.GameData;
 import game.GameSingleton;
+import game.Lobbies;
 import game.Player;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
@@ -25,6 +34,8 @@ public class Game extends Activity {
 	Player current = GameSingleton.getPlayer();
 	Spinner playerSpinner;
 	ListView listview;
+	boolean isMyPlayer;
+	private Button buyConquestPoints;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +53,7 @@ public class Game extends Activity {
 
 	private void setResourceList() {
 		ArrayList<String> list = new ArrayList<String>();
-		
+
 		list.addAll(getResourceList());
 		ArrayAdapter adapter = new ArrayAdapter(this,
 				android.R.layout.simple_list_item_1, list);
@@ -67,23 +78,21 @@ public class Game extends Activity {
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
-				//System.out.println((Player) arg0.getSelectedItem());
+				// System.out.println((Player) arg0.getSelectedItem());
 				GameSingleton.setPlayer((Player) arg0.getSelectedItem());
 				current = (Player) arg0.getSelectedItem();
 				ArrayList<String> list = new ArrayList<String>();
-				
+
 				list.addAll(getResourceList());
 				ArrayAdapter adapter = new ArrayAdapter(Game.this,
 						android.R.layout.simple_list_item_1, list);
 				listview.setAdapter(adapter);
-
-				
-
+				setButtons();
 			}
 
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
-				
+
 			}
 
 		});
@@ -115,7 +124,26 @@ public class Game extends Activity {
 
 			}
 		});
+		buyConquestPoints = (Button) findViewById(R.id.BuyConquestPoint);
+		if (current.getPlayer_id().equals(user.TokenSingleton.getUserID())) {
+			buyConquestPoints.setVisibility(View.VISIBLE);
+			// setFreeFont(toMenuButton);
+			buyConquestPoints.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					GameSingleton.setGame(game);
+					Intent intent = new Intent(Game.this, Market.class);
+					startActivityForResult(intent,1);
 
+				}
+			});
+		} else {
+			buyConquestPoints.setVisibility(View.GONE);
+		}
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	@Override

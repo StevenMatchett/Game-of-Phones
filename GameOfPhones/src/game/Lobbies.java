@@ -24,6 +24,7 @@ public class Lobbies {
 		lobbies = new ArrayList<GameData>();
 		for (int i = 0; i < games.length(); i++) {
 			try {
+
 				int game_id = games.getJSONObject(i).getInt("game_id");
 				String name = games.getJSONObject(i).getString("name");
 				int maxplayers = games.getJSONObject(i).getInt("maxplayers");

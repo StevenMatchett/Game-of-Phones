@@ -89,6 +89,10 @@
             android:name="core.gameOfPhones.Buildings"
             android:label="@string/title_activity_buildings" >
         </activity>
+        <activity
+            android:name="core.gameOfPhones.Market"
+            android:label="@string/title_activity_market" >
+        </activity>
     </application>
 
 </manifest>

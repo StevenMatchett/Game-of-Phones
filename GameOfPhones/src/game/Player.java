@@ -50,12 +50,6 @@ public class Player {
 
 	public ArrayList<String> getResources() {
 		ArrayList<String> rValue = new ArrayList<String>();
-		rValue.add("Conquest Points:" + conquest_points);
-		rValue.add("Factory Level:" + factory_level);
-		rValue.add("Studio Level:" + studio_level);
-		rValue.add("Temple Level:" + temple_level);
-		rValue.add("Lab Level:" + lab_level);
-		rValue.add("Agency Level:" + agency_level);
 		rValue.add("Artifacts:" + artifacts);
 		rValue.add("Blueprints:" + blueprints);
 		rValue.add("Fuel:" + fuel);
@@ -197,7 +191,7 @@ public class Player {
 	}
 
 	public String toString() {
-		return playerName;
+		return playerName+": Points:"+getConquest_points();
 	}
 
 }

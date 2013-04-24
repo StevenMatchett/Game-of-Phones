@@ -48,4 +48,13 @@
         android:layout_below="@+id/GameName"
         android:layout_toLeftOf="@+id/See_Buildings" />
 
+    <Button
+        android:id="@+id/BuyConquestPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/resource_list"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/menu_button"
+        android:text="Market" />
+
 </RelativeLayout>

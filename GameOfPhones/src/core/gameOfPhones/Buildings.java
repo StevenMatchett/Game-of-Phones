@@ -52,6 +52,8 @@ public class Buildings extends Activity {
 				// action=update_building&user_id=xxxx&game_id=xxxx&building_id=xxxx
 				Communication upgradeBuilding = new Communication();
 				JSONObject upgradeResult;
+			
+				
 				if (selectedUpgrade == 1) {
 					upgradeResult = upgradeBuilding
 							.getResponse("action=update_building&user_id="
@@ -59,6 +61,7 @@ public class Buildings extends Activity {
 									+ "&game_id="
 									+ game.GameSingleton.getGame().getId()
 									+ "&building_id=Agency");
+					
 				} else if (selectedUpgrade == 2) {
 					upgradeResult = upgradeBuilding
 							.getResponse("action=update_building&user_id="
@@ -91,6 +94,8 @@ public class Buildings extends Activity {
 									+ "&building_id=Temple");
 
 				}
+				
+
 				upgradeResource(upgradeResult, selectedUpgrade);
 				buildings.setSelection(0);
 			}

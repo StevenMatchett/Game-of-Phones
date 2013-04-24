@@ -29,5 +29,6 @@
     <string name="title_activity_game">Game</string>
     <string name="title_activity_building__view">Building_View</string>
     <string name="title_activity_buildings">Buildings</string>
+    <string name="title_activity_market">Market</string>
 
 </resources>
