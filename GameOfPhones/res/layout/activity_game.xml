@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/spacebackground"
     tools:context=".GameData" >
 
     <ListView
@@ -15,7 +16,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:background="@color/light_background"
+        android:background="@drawable/background"
         android:divider="@color/light_highlight"
         android:dividerHeight="3dp"
         android:textAlignment="inherit" >
@@ -37,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
         android:text="GAME NAME"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -46,6 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/resource_list"
         android:layout_below="@+id/GameName"
+        android:background="@color/dark_orange"
         android:layout_toLeftOf="@+id/See_Buildings" />
 
     <Button
