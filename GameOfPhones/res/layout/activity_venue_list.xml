@@ -6,14 +6,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-	android:background="@drawable/background"
+	android:background="@drawable/spacebackground"
     tools:context=".VenueList" >
 
     <ListView 
         android:id="@+id/resource_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/light_background"
+        android:background="@drawable/background"
         android:divider="@color/light_highlight"
         android:dividerHeight="3dp"
 											/>
