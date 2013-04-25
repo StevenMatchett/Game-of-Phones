@@ -2,89 +2,114 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/spacebackground"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/GameName"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:gravity="center"
             android:layout_weight="1"
             android:background="@drawable/background"
-            android:text="@string/new_lobby_name" />
+            android:text="@string/new_lobby_name"
+            android:textSize="20sp" 
+            android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/lobby_name"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="@drawable/background"
-            android:ems="10"
-            android:inputType="text" >
+            android:ems="20dp"
+            android:inputType="text"
+            android:text="" >
         </EditText>
     </LinearLayout>
 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="3" >
+        android:layout_weight="3" 
+        android:background="@color/med_orange">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
 
             <TextView
                 android:id="@+id/TextView03"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Number of \nVictory Points" />
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Number of \nVictory Points"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <Spinner
                 android:id="@+id/numberOfPlayers"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
                 android:drawSelectorOnTop="true" />
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
 
             <TextView
                 android:id="@+id/TextVie"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
                 android:text="Map"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <Spinner
                 android:id="@+id/map_type"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:drawSelectorOnTop="true" />
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/TextView02"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Number of \nPlayers" />
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="Number of \nPlayers"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <Spinner
                 android:id="@+id/numberOfVictoryPoints"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:drawSelectorOnTop="true" />
-        </TableRow>
+        </LinearLayout>
     </TableLayout>
 
     <RelativeLayout
