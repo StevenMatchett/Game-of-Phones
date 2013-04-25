@@ -7,4 +7,9 @@
     android:angle="90"
     android:gradientRadius="326"
     android:type="linear"/>
+
+ <stroke
+        android:width="2dp"
+        android:color="@color/dark_background" />
+
 </shape>
