@@ -186,11 +186,10 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:background="@drawable/alt_background"
+                android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white"
-                 />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/GetPoint"
